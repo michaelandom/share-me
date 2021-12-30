@@ -12,7 +12,7 @@ const Feed = () => {
   useEffect(() => {
     setLoading(true);
     if (categoryId) {
-      const query = searchQuery(categoryId);
+      const query = searchQuery(categoryId.replaceAll("_"," "));
 
       client.fetch(query).then((data) => {
         setPins(data);
@@ -26,7 +26,7 @@ const Feed = () => {
     }
   }, [categoryId]);
   if (loading) return <Spinner message='we are adding new ides' />;
-  if(!pins?.length) return <h2 className="">No pins available</h2>
+  if(!pins?.length) return <h2 className="">No Girl Available Right Now</h2>
   return <div>
    {
        pins && <MasonryLayout pins={pins} />

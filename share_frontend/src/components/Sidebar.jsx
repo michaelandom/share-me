@@ -41,12 +41,12 @@ const Sidebar = ({ user, closeToggle }) => {
           {categories.slice(0, categories.length - 1).map((category) => (
             <NavLink
             key={category.name}
-              to={`/category/${category.name}`}
+              to={`/category/${category.name.replaceAll(" ","_")}`}
               onClick={handelCloseSidebar}
               className={({isActive}) =>
                 isActive ? isActiveStyle : isNotActiveStyle
               }>
-                <img src={category.image} alt="category image" className=" w-8 h-8 rounded-full shadow-sm"/>
+                <img src={category.image} alt="category image" className=" w-10 h-10 rounded-full shadow-sm object-cover"/>
               {category.name}
             </NavLink>
           ))}

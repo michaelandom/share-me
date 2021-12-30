@@ -90,7 +90,7 @@ const PinDetail = ({ user }) => {
           <p className="mt-3">{pinDetail.about} </p>
         </div>
         <Link
-          to={`user-profile/${pinDetail?.postedBy?.id}`}
+          to={`/user-profile/${pinDetail?.postedBy?._id}`}
           className="flex gap-2 mt-5 items-center bg-white rounded-lg"
         >
           <img
@@ -102,7 +102,7 @@ const PinDetail = ({ user }) => {
             {pinDetail?.postedBy?.userName}
           </p>
         </Link>
-        <h2 className="mt-5 text-2xl">Comments</h2>
+        <h2 className="mt-5 text-2xl">Offers</h2>
         <div className="max-h-370 overflow-y-auto">
           {pinDetail?.comments?.map((comment, i) => (
             <div
@@ -123,7 +123,7 @@ const PinDetail = ({ user }) => {
         </div>
 
         <div className="flex flex-wrap mt-6 gap-3">
-          <Link to={`user-profile/${pinDetail?.postedBy?.id}`}>
+          <Link to={`/user-profile/${pinDetail?.postedBy?._id}`}>
             <img
               src={pinDetail?.postedBy?.image}
               alt="userImage"
@@ -142,7 +142,7 @@ const PinDetail = ({ user }) => {
             className=" bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base outline-none"
             onClick={addComment}
           >
-            {addingComment ? "Adding comment ..." : "Comment"}
+            {addingComment ? "Adding Offer ..." : "Offers"}
           </button>
         </div>
       </div>
