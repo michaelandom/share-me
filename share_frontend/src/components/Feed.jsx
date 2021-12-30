@@ -26,6 +26,7 @@ const Feed = () => {
     }
   }, [categoryId]);
   if (loading) return <Spinner message='we are adding new ides' />;
+  if(!pins?.length) return <h2 className="">No pins available</h2>
   return <div>
    {
        pins && <MasonryLayout pins={pins} />

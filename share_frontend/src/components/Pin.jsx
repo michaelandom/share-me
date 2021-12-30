@@ -13,7 +13,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
   const [savingPost, setSavingPost] = useState(false);
   const userInfo = fetchUser();
   const alreadySaved = !!save?.filter(
-    (item) => item.postedBy._id === userInfo.googleId
+    (item) => item.postedBy._id === userInfo?.googleId
   )?.length;
   const savePin = (id) => {
     if (!alreadySaved) {
@@ -24,10 +24,10 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
         .insert("after", "save[-1]", [
           {
             _key: uuidv4(),
-            userId: userInfo.googleId,
+            userId: userInfo?.googleId,
             postedBy: {
               _type: "postedBy",
-              _ref: userInfo.googleId,
+              _ref: userInfo?.googleId,
             },
           },
         ])
@@ -100,7 +100,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     : destination}
                 </a>
               )}
-              {postedBy?._id === userInfo.googleId && (
+              {postedBy?._id === userInfo?.googleId && (
                 <button
                   type='button'
                   className='bg-white p-2 opacity-70 hover:opacity-100 text-black font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none'
@@ -115,7 +115,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
           </div>
         )}
       </div>
-      <Link to={`user-profile/${postedBy?.id}`} className="flex gap-2 mt-2 items-center ">
+      <Link to={`user-profile/${postedBy?._id}`} className="flex gap-2 mt-2 items-center ">
           <img src={postedBy?.image} alt="userImage" className="w-8 h-8 rounded-full object-cover" />
           <p className="font-semibold capitalize ">{postedBy?.userName}</p>
       </Link>
