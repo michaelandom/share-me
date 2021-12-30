@@ -15,27 +15,7 @@ const Sidebar = ({ user, closeToggle }) => {
       closeToggle(false);
     }
   };
-  const categories = [
-    {
-      name: "Animals",
-    },
-    {
-      name: "Wallpapers",
-    },
 
-    {
-      name: "Photography",
-    },
-    {
-      name: "Gaming",
-    },
-    {
-      name: "coding",
-    },
-    {
-      name: "other",
-    },
-  ];
   return (
     <div className='flex flex-col justify-between bg-white h-full overflow-y-scroll min-w-210 hide-scrollbar'>
       <div className='flex flex-col'>
@@ -60,6 +40,7 @@ const Sidebar = ({ user, closeToggle }) => {
           </h3>
           {categories.slice(0, categories.length - 1).map((category) => (
             <NavLink
+            key={category.name}
               to={`/category/${category.name}`}
               onClick={handelCloseSidebar}
               className={({isActive}) =>
