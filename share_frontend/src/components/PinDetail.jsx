@@ -64,7 +64,7 @@ const PinDetail = ({ user }) => {
         <img
           src={pinDetail?.image && urlFor(pinDetail?.image).url()}
           alt="image"
-          className="rounded-t-3xl rounded-b-lg"
+          className="rounded-t-3xl rounded-b-lg max-w-sm"
         />
       </div>
       <div className="w-full p-5 flex-1 xl:min-w-620 ">
