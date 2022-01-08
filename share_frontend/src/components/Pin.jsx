@@ -7,7 +7,7 @@ import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { client, urlFor } from "../client";
 import { fetchUser } from "../utils/fetchUser";
 
-const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
+const Pin = ({ pin: { postedBy, image, _id, price, save } }) => {
   const navigate = useNavigate();
   const [postHovered, setPostHovered] = useState(false);
   const [savingPost, setSavingPost] = useState(false);
@@ -88,16 +88,14 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
               )}
             </div>
             <div className='flex justify-between items-center gap-2 w-full'>
-              {destination && (
+              {price && (
                 <a
-                  href={destination}
+                  href={price}
                   target='_blank'
                   rel='noreferrer'
                   className='bg-white flex items-center gap-2 text-black font-bold p-2 pr-4 pl-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md'>
                   <BsFillArrowUpRightCircleFill />
-                  {destination.length > 15
-                    ? `${destination.slice(0,15)}...`
-                    : destination}
+                  {`${price} Br`}
                 </a>
               )}
               {postedBy?._id === userInfo?.googleId && (

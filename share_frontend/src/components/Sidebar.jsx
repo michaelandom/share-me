@@ -23,7 +23,7 @@ const Sidebar = ({ user, closeToggle }) => {
           to='/'
           className='flex px-5 gap-2 my-6 w-190 items-center'
           onClick={() => handelCloseSidebar}>
-          <img src={logo} alt='logo' className='w-full' />
+         <span className="w-full text-2xl font-serif">Logo</span>
         </Link>
         <div className='flex flex-col gap-5'>
           <NavLink

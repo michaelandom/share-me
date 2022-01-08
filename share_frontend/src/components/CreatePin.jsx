@@ -12,7 +12,7 @@ const CreatePin = ({ user }) => {
   const [title, setTitle] = useState("");
   const [about, setAbout] = useState("");
   const [loading, setLoading] = useState(false);
-  const [destination, setDestination] = useState();
+  const [price, setprice] = useState();
   const [fields, setFields] = useState(false);
   const [category, setCategory] = useState();
   const [imageAsset, setImageAsset] = useState();
@@ -48,12 +48,12 @@ const CreatePin = ({ user }) => {
     }
   };
   const savePin = () => {
-    if (title && about && destination && category && imageAsset?._id) {
+    if (title && about && price && category && imageAsset?._id) {
       const doc = {
         _type: "pin",
         title,
         about,
-        destination,
+        price,
         image: {
           _type: "image",
           asset: {
@@ -147,18 +147,21 @@ const CreatePin = ({ user }) => {
               <p className="font-bold">{user.userName}</p>
             </div>
           )}
-          <input
+          <textarea
             type="text"
+            rows='3'
             value={about}
             onChange={(e) => setAbout(e.target.value)}
-            placeholder="Add your about here"
-            className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
+            placeholder="Add about the product here"
+            className='w-full outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2 placeholder-gray-500 tracking-wide  min-h-[50px]'
+
+//            className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
           />
           <input
-            type="text"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-            placeholder="Add a destination url"
+            type="number"
+            value={price}
+            onChange={(e) => setprice(e.target.value)}
+            placeholder="Add a price in birr"
             className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
           />
           <div className=" flex flex-col">

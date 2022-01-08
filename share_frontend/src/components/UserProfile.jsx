@@ -23,6 +23,8 @@ const UserProfile = () => {
   const [user, setUser] = useState();
   const [pins, setPins] = useState();
   const [text, setText] = useState("Created");
+  const [loading, setLoading] = useState(false);
+
   const [activeBtn, setActiveBtn] = useState("created");
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -38,15 +40,20 @@ const UserProfile = () => {
     });
   }, [userId]);
   useEffect(() => {
+    setLoading(true);
     if (text === "Created") {
       const createdPinsQuery = userCreatedPinsQuery(userId);
       client.fetch(createdPinsQuery).then((data) => {
         setPins(data);
+        setLoading(false);
       });
+
     } else {
       const savedPinsQuery = userSavedPinsQuery(userId);
       client.fetch(savedPinsQuery).then((data) => {
         setPins(data);
+        setLoading(false);
+
       });
     }
   }, [text, userId]);
@@ -115,17 +122,23 @@ const UserProfile = () => {
               Saved
             </button>
           </div>
-          {pins?.length ? (
-            <div className="px-2 ">
-              <MasonryLayout pins={pins} />
-            </div>
-          ):(
-              <div className="flex justify-center font-bold items-center w-full text-xl mt-2">
-                  No pins found
-              </div>
-          )
-        
-        }
+          {
+   loading ?
+    <Spinner message={` Loading ${text} ...`} />
+    :pins?.length ? (
+      <div className="px-2 ">
+        <MasonryLayout pins={pins} />
+      </div>
+    ):(
+        <div className="flex justify-center font-bold items-center w-full text-xl mt-2">
+            No pins found
+        </div>
+    )
+  
+  
+   
+          }
+       
         </div>
       </div>
     </div>

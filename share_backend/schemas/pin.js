@@ -14,9 +14,9 @@ export default {
             type:"string"
         },
         {
-            name:"destination",
-            title:"Destination",
-            type:"url"
+            name:"price",
+            title:"Price",
+            type:"number"
         },
         {
             name:"category",

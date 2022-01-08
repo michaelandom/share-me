@@ -79,15 +79,17 @@ const PinDetail = ({ user }) => {
               <MdDownloadForOffline />
             </a>
           </div>
-          <a href={pinDetail.destination} target="_blank" rel="noreferrer">
-            {pinDetail.destination}
+          <a href={pinDetail.price} target="_blank" rel="noreferrer" className="text-lg font-bold text-green-500">
+            {/* {pinDetail.price} */}
+            {`${pinDetail.price} Br`}
+
           </a>
         </div>
         <div>
-          <h1 className="text-4xl font-bold break-words mt-3">
+          <h1 className="text-2xl font-semibold  mt-3">
             {pinDetail.title}
           </h1>
-          <p className="mt-3">{pinDetail.about} </p>
+          <p className="text-2xl font-medium text-gray-400 break-words mt-3">{pinDetail.about} </p>
         </div>
         <Link
           to={`/user-profile/${pinDetail?.postedBy?._id}`}
@@ -102,7 +104,7 @@ const PinDetail = ({ user }) => {
             {pinDetail?.postedBy?.userName}
           </p>
         </Link>
-        <h2 className="mt-5 text-2xl">Offers</h2>
+        <h2 className="mt-5 text-2xl">Comments</h2>
         <div className="max-h-370 overflow-y-auto">
           {pinDetail?.comments?.map((comment, i) => (
             <div
@@ -142,7 +144,7 @@ const PinDetail = ({ user }) => {
             className=" bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base outline-none"
             onClick={addComment}
           >
-            {addingComment ? "Adding Offer ..." : "Offers"}
+            {addingComment ? "Adding Comment ..." : "Comment"}
           </button>
         </div>
       </div>
