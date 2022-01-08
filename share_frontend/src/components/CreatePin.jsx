@@ -12,7 +12,7 @@ const CreatePin = ({ user }) => {
   const [title, setTitle] = useState("");
   const [about, setAbout] = useState("");
   const [loading, setLoading] = useState(false);
-  const [price, setprice] = useState();
+  const [price, setPrice] = useState(0);
   const [fields, setFields] = useState(false);
   const [category, setCategory] = useState();
   const [imageAsset, setImageAsset] = useState();
@@ -160,7 +160,7 @@ const CreatePin = ({ user }) => {
           <input
             type="number"
             value={price}
-            onChange={(e) => setprice(e.target.value)}
+            onChange={(e) => setPrice(e.target.valueAsNumber)}
             placeholder="Add a price in birr"
             className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
           />
