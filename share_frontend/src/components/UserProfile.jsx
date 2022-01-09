@@ -31,7 +31,7 @@ const UserProfile = () => {
   const User = fetchUser();
   const logout = () => {
     localStorage.clear();
-    navigate("/");
+    navigate("/login");
   };
   useEffect(() => {
     const query = userQuery(userId);
