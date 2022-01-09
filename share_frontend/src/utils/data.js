@@ -12,12 +12,12 @@ export const categories = [
     image: 'https://image.winudf.com/v2/image1/Y29tLnNob2VzbG9nb2lkZWFzLmhmemluY19zY3JlZW5fMF8xNTg5ODg0NzIxXzAxMA/screen-0.jpg?fakeurl=1&type=.jpg',
   },
   {
-    name: 'wallpaper',
-    image: 'https://i.pinimg.com/236x/03/48/b6/0348b65919fcbe1e4f559dc4feb0ee13.jpg',
+    name: 'dress',
+    image: 'https://i5.walmartimages.com/asr/911fa45b-3c55-45e1-8794-0cbd58a422a4_1.ba97bc3e8fbebde41437b3042b273056.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF',
   },
   {
-    name: 'websites',
-    image: 'https://i.pinimg.com/750x/66/b1/29/66b1296d36598122e6a4c5452b5a7149.jpg',
+    name: 'perfume',
+    image: 'https://image.shutterstock.com/image-vector/perfume-logo-260nw-695964418.jpg',
   },
   {
     name: 'photo',

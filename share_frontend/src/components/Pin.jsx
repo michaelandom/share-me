@@ -93,7 +93,7 @@ const Pin = ({ pin: { postedBy, image, _id, price, save } }) => {
                   href={price}
                   target='_blank'
                   rel='noreferrer'
-                  className='bg-white flex items-center gap-2 text-black font-bold p-2 pr-4 pl-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md'>
+                  className='bg-white flex items-center gap-2 text-sm text-black font-bold p-2 pr-4 pl-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md'>
                   <BsFillArrowUpRightCircleFill />
                   {`${price} Br`}
                 </a>
