@@ -23,13 +23,18 @@ const Sidebar = ({ user, closeToggle }) => {
           to='/'
           className='flex px-5 gap-2 my-6 w-190 items-center'
           onClick={() => handelCloseSidebar}>
-         <span className="w-full text-2xl font-serif">Logo</span>
+          <span className='w-full text-2xl font-serif '>
+            {/* font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 */}
+            <h4 className=' font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
+              Logo
+            </h4>
+          </span>{" "}
         </Link>
         <div className='flex flex-col gap-5'>
           <NavLink
             to='/'
             onClick={handelCloseSidebar}
-            className={({isActive}) =>
+            className={({ isActive }) =>
               isActive ? isActiveStyle : isNotActiveStyle
             }>
             <RiHomeFill />
@@ -40,31 +45,32 @@ const Sidebar = ({ user, closeToggle }) => {
           </h3>
           {categories.slice(0, categories.length - 1).map((category) => (
             <NavLink
-            key={category.name}
-              to={`/category/${category.name.replaceAll(" ","_")}`}
+              key={category.name}
+              to={`/category/${category.name.replaceAll(" ", "_")}`}
               onClick={handelCloseSidebar}
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 isActive ? isActiveStyle : isNotActiveStyle
               }>
-                <img src={category.image} alt="category image" className=" w-10 h-10 rounded-full shadow-sm object-cover"/>
+              <img
+                src={category.image}
+                alt='category image'
+                className=' w-10 h-10 rounded-full shadow-sm object-cover'
+              />
               {category.name}
             </NavLink>
           ))}
         </div>
       </div>
 
-      {
-          user && (
-              <Link 
-              to={`user-profile/${user._id}`}
-              onClick={handelCloseSidebar}
-              className="flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3"
-              >
-                  <img src={user.image} alt="user" className="w-10 h-10 rounded-full" />
-             <p>{user.userName}</p>
-              </Link>
-          )
-      }
+      {user && (
+        <Link
+          to={`user-profile/${user._id}`}
+          onClick={handelCloseSidebar}
+          className='flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3'>
+          <img src={user.image} alt='user' className='w-10 h-10 rounded-full' />
+          <p>{user.userName}</p>
+        </Link>
+      )}
     </div>
   );
 };

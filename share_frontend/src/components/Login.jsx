@@ -24,8 +24,8 @@ client.createIfNotExists(doc).then (() =>{
 
     }
   return (
-    <div className='flex justify-start item-center flex-col h-screen'>
-      <div className='relative w-full h-full'>
+    <div className='flex  justify-start item-center flex-col h-screen bg-black'>
+      {/* <div className='relative w-full h-full'>
         <video
           src={shareVideo}
           type='video/mp4'
@@ -34,13 +34,13 @@ client.createIfNotExists(doc).then (() =>{
           muted
           autoPlay
           className='w-full h-full object-cover'></video>
-      </div>
-      <div className="absolute flex flex-col items-center top-0 left-0 right-0 bottom-0 bg-black space-y-20 pt-48 ">
+      </div> */}
+      <div className=" flex flex-col items-center top-0 left-0 right-0 bottom-0 bg-black space-y-10 pt-20 ">
         {/* //bg-blackOverlay */}
 
           <div className="p-5 ">
          {/* <img src={logo} width="130px" alt="" /> */}
-         <span className="w-[150px] h-[150px] font-bold text-[150px] text-white"> Logo </span>
+         <span className=" font-bold text-5xl lg:text-[150px] text-white"> Logo </span>
           </div>
 
           <div className="shadow-2xl">

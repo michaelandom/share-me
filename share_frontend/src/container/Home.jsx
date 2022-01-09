@@ -38,7 +38,12 @@ const Home = () => {
             onClick={() => setToggleSidebar(true)}
           />
           <Link to='/'>
-          <span className="w-full text-2xl font-serif">Logo</span>
+          <span className='w-full text-2xl font-serif '>
+            {/* font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 */}
+            <h4 className=' font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
+              Logo
+            </h4>
+          </span>
           </Link>
           <Link to={`user-profile/${user?._id}`}>
             <img
