@@ -36,10 +36,12 @@ client.createIfNotExists(doc).then (() =>{
           autoPlay
           className='w-full h-full object-cover'></video>
       </div>
-      <div className="absolute flex flex-col justify-center items-center top-0 left-0 right-0 bottom-0 bg-blackOverlay">
+      <div className="absolute flex flex-col items-center top-0 left-0 right-0 bottom-0 bg-black space-y-20 pt-48 ">
+        {/* //bg-blackOverlay */}
 
           <div className="p-5 ">
-         <img src={logo} width="130px" alt="" />
+         {/* <img src={logo} width="130px" alt="" /> */}
+         <span className="w-[150px] h-[150px] font-bold text-[150px] text-white"> Logo </span>
           </div>
 
           <div className="shadow-2xl">
