@@ -40,7 +40,13 @@ client.createIfNotExists(doc).then (() =>{
 
           <div className="p-5 ">
          {/* <img src={logo} width="130px" alt="" /> */}
-         <span className=" font-bold text-5xl lg:text-[150px] text-white"> Logo </span>
+         
+         <span className='w-full font-bold text-5xl lg:text-[150px] text-white '>
+            {/* font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 */}
+            <h4 className=' font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
+              Logo
+            </h4>
+          </span>
           </div>
 
           <div className="shadow-2xl">
